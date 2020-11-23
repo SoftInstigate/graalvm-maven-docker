@@ -7,6 +7,8 @@ ARG MAVEN_VERSION="3.6.3"
 
 ENV SDKMAN_DIR=/root/.sdkman
 
+COPY bin/entrypoint.sh /root
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends tzdata curl zip unzip build-essential libz-dev zlib1g-dev ca-certificates fontconfig locales \
     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
@@ -20,15 +22,13 @@ RUN apt-get update \
 RUN bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh \
         && sdk version \
         && sdk install java $JAVA_VERSION \
-        && sdk install maven $MAVEN_VERSION \
         && gu install native-image \
+        && sdk install maven $MAVEN_VERSION \
         && rm -rf $SDKMAN_DIR/archives/* \
         && rm -rf $SDKMAN_DIR/tmp/*"
 
-WORKDIR /opt/code
+WORKDIR /opt/app
 
-# "/root/.sdkman/candidates/maven/current/bin/mvn"
+SHELL ["/bin/bash", "-i", "-c"]
 
-SHELL ["/bin/bash", "-c"]
-
-CMD source /root/.bashrc && mvn
+ENTRYPOINT [ "/root/entrypoint.sh" ]
