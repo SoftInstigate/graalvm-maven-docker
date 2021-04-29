@@ -2,7 +2,7 @@ FROM debian:buster-slim
 
 LABEL maintainer="SoftInstigate <info@softinstigate.com>"
 
-ARG JAVA_VERSION="21.0.0.r11-grl"
+ARG JAVA_VERSION="21.1.0.r16-grl"
 ARG MAVEN_VERSION="3.6.3"
 
 ENV SDKMAN_DIR=/root/.sdkman
