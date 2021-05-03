@@ -9,6 +9,12 @@ It also installs `native-image`
 - GraalVM: 21.1.0.r16-grl
 - Maven: 3.6.3
 
+## Pull image
+
+```bash
+$ docker pull softinstigate/graalvm-maven
+```
+
 ## Run ##
 
 The default `ENTRYPOINT` for this image is `mvn`.
