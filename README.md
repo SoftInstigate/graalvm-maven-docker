@@ -34,4 +34,4 @@ $ docker run -it --rm \
 
 ## how to build a native image
 
-Use the [Native Image Maven Plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) in your `pom.xml`.
+Use the [Native Maven Plugin](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html/) in your `pom.xml`.
