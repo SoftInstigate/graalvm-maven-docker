@@ -34,7 +34,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest
-            type=semver,pattern={{raw}}
+            type=ref,event=tag
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
