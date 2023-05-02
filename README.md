@@ -12,7 +12,7 @@ It also installs `native-image`
 ## Pull image
 
 ```bash
-$ docker pull ghcr.io/softinstigate/graalvm-maven-docker
+$ docker pull softinstigate/graalvm-maven
 ```
 
 ## Run ##
@@ -22,7 +22,7 @@ The default `ENTRYPOINT` for this image is `mvn`.
 If you want to `mvn clean install` your Java project, CD where the pom.xml is located, then:
 
 ```bash
-$ docker pull ghcr.io/softinstigate/graalvm-maven-docker
+$ docker pull softinstigate/graalvm-maven
 $ docker run -it --rm \
     -v "$PWD":/opt/app  \
     -v "$HOME"/.m2:/root/.m2 \
