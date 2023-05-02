@@ -1,9 +1,9 @@
-FROM debian:buster-slim
+FROM debian:stable-slim
 
 LABEL maintainer="SoftInstigate <info@softinstigate.com>"
 
-ARG JAVA_VERSION="22.3.r17-grl"
-ARG MAVEN_VERSION="3.8.6"
+ARG JAVA_VERSION="22.3.2.r17-grl"
+ARG MAVEN_VERSION="3.9.1"
 
 ENV SDKMAN_DIR=/root/.sdkman
 

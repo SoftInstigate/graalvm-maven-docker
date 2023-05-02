@@ -6,8 +6,8 @@ It also installs `native-image`
 
 ## Versions ##
 
-- GraalVM: 22.3.r17
-- Maven: 3.8.6
+- GraalVM: 22.3.2.r17
+- Maven: 3.9.1
 
 ## Pull image
 
@@ -26,7 +26,7 @@ $ docker pull ghcr.io/softinstigate/graalvm-maven-docker
 $ docker run -it --rm \
     -v "$PWD":/opt/app  \
     -v "$HOME"/.m2:/root/.m2 \
-    softinstigate/graalvm-maven-docker \
+    softinstigate/graalvm-maven \
     clean package
 ```
 
