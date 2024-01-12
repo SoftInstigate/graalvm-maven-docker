@@ -4,6 +4,8 @@ A docker image for [GraalVM](https://graalvm.org) and [Maven](https://maven.apac
 
 It also installs `native-image`
 
+Images are automatically published on [Docker Hub](https://hub.docker.com/r/softinstigate/graalvm-maven) when commit is tagged.
+
 ## Versions ##
 
 - GraalVM: 17.0.9-graal
