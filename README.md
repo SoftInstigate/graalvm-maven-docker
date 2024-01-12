@@ -6,7 +6,7 @@ It also installs `native-image`
 
 ## Versions ##
 
-- GraalVM: 17.0.8-graal (23.0.1 for Java 17)
+- GraalVM: 17.0.9-graal
 - Maven: 3.9.1
 
 ## Pull image

@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 LABEL maintainer="SoftInstigate <info@softinstigate.com>"
 
-ARG JAVA_VERSION="17.0.8-graal"
+ARG JAVA_VERSION="17.0.9-graal"
 ARG MAVEN_VERSION="3.9.1"
 
 ENV SDKMAN_DIR=/root/.sdkman
