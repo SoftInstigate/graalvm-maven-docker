@@ -8,7 +8,7 @@ Images are automatically published on [Docker Hub](https://hub.docker.com/r/soft
 
 ## Versions ##
 
-- GraalVM: 17.0.9-graal
+- GraalVM: 21.0.2-graal
 - Maven: 3.9.1
 
 ## Pull image
