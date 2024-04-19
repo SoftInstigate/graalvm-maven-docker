@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 LABEL maintainer="SoftInstigate <info@softinstigate.com>"
 
-ARG JAVA_VERSION="17.0.9-graal"
+ARG JAVA_VERSION="21.0.2-graalce"
 ARG MAVEN_VERSION="3.9.1"
 
 ENV SDKMAN_DIR=/root/.sdkman
@@ -22,8 +22,6 @@ RUN apt-get update \
 RUN bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh \
         && sdk version \
         && sdk install java $JAVA_VERSION \
-        && gu install native-image \
-        && gu install js \
         && sdk install maven $MAVEN_VERSION \
         && rm -rf $SDKMAN_DIR/archives/* \
         && rm -rf $SDKMAN_DIR/tmp/*"
