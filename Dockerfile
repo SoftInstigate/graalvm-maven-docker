@@ -1,4 +1,4 @@
-FROM ghcr.io/graalvm/graalvm-community:22.0.2
+FROM ghcr.io/graalvm/graalvm-community:21.0.2
 
 LABEL maintainer="SoftInstigate <info@softinstigate.com>"
 

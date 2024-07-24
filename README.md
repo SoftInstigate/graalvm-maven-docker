@@ -12,36 +12,37 @@ Images are automatically published on [Docker Hub](https://hub.docker.com/r/soft
 $ docker pull softinstigate/graalvm-maven
 ```
 
-## Check versions ##
+## Summary of versions ##
 
-### JDK version
+- openjdk 21.0.2 (GraalVM CE 21.0.2+13.1)
+- Apache Maven 3.9.8
+- native-image 21.0.2
+
+### JDK version:
 
 ```sh
 $ docker run -it --rm softinstigate/graalvm-maven java --version
-
-openjdk 22.0.2 2024-07-16
-OpenJDK Runtime Environment GraalVM CE 22.0.2+9.1 (build 22.0.2+9-jvmci-b01)
-OpenJDK 64-Bit Server VM GraalVM CE 22.0.2+9.1 (build 22.0.2+9-jvmci-b01, mixed mode, sharing)
+openjdk 21.0.2 2024-01-16
+OpenJDK Runtime Environment GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30)
+OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30, mixed mode, sharing)
 ```
 
 ### Native Image version
 
 ```sh
 $ docker run -it --rm softinstigate/graalvm-maven native-image --version
-
-native-image 22.0.2 2024-07-16
-GraalVM Runtime Environment GraalVM CE 22.0.2+9.1 (build 22.0.2+9-jvmci-b01)
-Substrate VM GraalVM CE 22.0.2+9.1 (build 22.0.2+9, serial gc)
+native-image 21.0.2 2024-01-16
+GraalVM Runtime Environment GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30)
+Substrate VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13, serial gc)
 ```
 
 ### Maven version
 
 ```sh
 $ docker run -it --rm softinstigate/graalvm-maven mvn --version
-
 Apache Maven 3.9.8 (36645f6c9b5079805ea5009217e36f2cffd34256)
 Maven home: /opt/apache-maven-3.9.8
-Java version: 22.0.2, vendor: GraalVM Community, runtime: /opt/graalvm-community-java22
+Java version: 21.0.2, vendor: GraalVM Community, runtime: /opt/graalvm-community-java21
 Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "6.6.32-linuxkit", arch: "amd64", family: "unix"
 ```
