@@ -1,5 +1,7 @@
 # graalvm-maven-docker
 
+[![Docker image](https://github.com/SoftInstigate/graalvm-maven-docker/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/SoftInstigate/graalvm-maven-docker/actions/workflows/deploy-image.yml)
+
 A docker image for [GraalVM](https://graalvm.org) and [Maven](https://maven.apache.org) built with [sdkman](https://sdkman.io)
 
 It also installs `native-image`
