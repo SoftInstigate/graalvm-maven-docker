@@ -6,7 +6,7 @@ A docker image for [GraalVM](https://graalvm.org) and [Maven](https://maven.apac
 
 Images are automatically published on [Docker Hub](https://hub.docker.com/r/softinstigate/graalvm-maven) when commit is tagged.
 
-## Versions ##
+## Versions
 
 - GraalVM: 25-graalce
 - Maven: 3.9.11
@@ -14,10 +14,10 @@ Images are automatically published on [Docker Hub](https://hub.docker.com/r/soft
 ## Pull image
 
 ```bash
-$ docker pull softinstigate/graalvm-maven
+docker pull softinstigate/graalvm-maven
 ```
 
-## Run ##
+## Run
 
 The default `ENTRYPOINT` for this image is `mvn`.
 
