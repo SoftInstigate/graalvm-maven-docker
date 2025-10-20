@@ -2,8 +2,8 @@ FROM debian:stable-slim
 
 LABEL maintainer="SoftInstigate <info@softinstigate.com>"
 
-ARG JAVA_VERSION="22.0.2-graalce"
-ARG MAVEN_VERSION="3.9.9"
+ARG JAVA_VERSION="24.0.2-graalce"
+ARG MAVEN_VERSION="3.9.11"
 
 ENV SDKMAN_DIR=/root/.sdkman
 

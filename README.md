@@ -10,8 +10,8 @@ Images are automatically published on [Docker Hub](https://hub.docker.com/r/soft
 
 ## Versions ##
 
-- GraalVM: 22.0.2-graalce
-- Maven: 3.9.9
+- GraalVM: 24.0.2-graalce
+- Maven: 3.9.11
 
 ## Pull image
 
