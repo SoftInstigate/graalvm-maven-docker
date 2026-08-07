@@ -2,9 +2,28 @@
 
 [![Docker image](https://github.com/SoftInstigate/graalvm-maven-docker/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/SoftInstigate/graalvm-maven-docker/actions/workflows/deploy-image.yml)
 
-Minimal Docker image with [GraalVM](https://graalvm.org) + [Maven](https://maven.apache.org) installed via [SDKMAN!](https://sdkman.io). Use it to build JVM apps and GraalVM native images without installing toolchains locally.
+A minimal Docker image that packages [GraalVM](https://graalvm.org) and [Apache Maven](https://maven.apache.org) for building JVM applications and compiling GraalVM native images. No local toolchain setup required.
 
-Images are automatically published on Docker Hub and GHCR when a git tag is pushed.
+## Purpose
+
+Building Java applications—especially GraalVM native images—requires a specific combination of JDK, build tools, and native libraries. Developers waste time installing and maintaining these toolchains across machines, CI runners, and team environments. This image solves that problem by providing a ready-to-use, versioned build environment.
+
+### Why use this image?
+
+- **Zero local setup** — Pull the image and start building. No JDK, Maven, or GraalVM installation needed.
+- **Reproducible builds** — Pin a tag (e.g. `25-graalce`) and every developer and CI job gets the exact same toolchain.
+- **Native image support** — Includes all dependencies (`build-essential`, `libz-dev`, `zlib1g-dev`) required by GraalVM's `native-image` compiler out of the box.
+- **Multi-arch** — Works on both `linux/amd64` and `linux/arm64` (Apple Silicon, Graviton, etc.).
+- **CI/CD ready** — Ideal for GitHub Actions, GitLab CI, Jenkins, or any container-based pipeline.
+
+### When to use it
+
+| Use case | Example |
+|---|---|
+| Build a Maven project without installing Java | `docker run --rm -v "$PWD":/opt/app softinstigate/graalvm-maven clean package` |
+| Compile a GraalVM native image | `docker run --rm -v "$PWD":/opt/app softinstigate/graalvm-maven -Pnative native:compile` |
+| Run builds in CI with consistent tooling | Use as a container image in your CI workflow |
+| Avoid version conflicts across projects | Different tags for different GraalVM/Maven versions |
 
 ## Current versions
 
@@ -37,7 +56,13 @@ docker pull softinstigate/graalvm-maven:25-graalce
 docker pull ghcr.io/softinstigate/graalvm-maven:25-graalce
 ```
 
-## Quick start
+## How it works
+
+The image is based on `debian:stable-slim` and uses [SDKMAN!](https://sdkman.io) to install GraalVM and Maven. This approach makes version upgrades simple—just change the `ARG` values in the `Dockerfile` and rebuild.
+
+An entrypoint script (`bin/entrypoint.sh`) activates SDKMAN! and delegates to `mvn`, so the image behaves like a standalone Maven command.
+
+## Building a project
 
 The default `ENTRYPOINT` is `mvn`. The working directory is `/opt/app`.
 
@@ -55,7 +80,7 @@ docker run -it --rm \
 
 > Mounting `~/.m2` speeds up builds by reusing your local Maven cache.
 
-## Native image builds
+## Compiling a native image
 
 Use the [GraalVM Native Build Tools (Maven plugin)](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html/) in your project. Then run:
 
@@ -71,7 +96,9 @@ docker run -it --rm \
     -Pnative -DskipTests native:compile
 ```
 
-## Local development of this image
+## Contributing: local development
+
+To build and test the image locally:
 
 ```bash
 # Build the image locally (no cache)
@@ -84,7 +111,7 @@ docker run -it --rm softinstigate/graalvm-maven --version
 ./bin/push.sh
 ```
 
-## CI/CD and release process
+## Release process
 
 - GitHub Actions workflow: `.github/workflows/deploy-image.yml`
 - Trigger: push of any git tag
