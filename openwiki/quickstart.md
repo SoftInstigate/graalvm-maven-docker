@@ -15,7 +15,7 @@ The image lets teams run Maven builds and GraalVM native-image compilations insi
 
 | Component | Version |
 |-----------|---------|
-| GraalVM   | `25.0.2-graalce` |
+| GraalVM   | `25.1.3-graalce` |
 | Maven     | `3.9.16` |
 
 Versions are controlled by `ARG` directives in the [`Dockerfile`](/Dockerfile).
@@ -24,17 +24,18 @@ Versions are controlled by `ARG` directives in the [`Dockerfile`](/Dockerfile).
 
 ```bash
 # Docker Hub
-docker pull softinstigate/graalvm-maven:25-graalce
+docker pull softinstigate/graalvm-maven:25.1.3-graalce
 
 # GHCR
-docker pull ghcr.io/softinstigate/graalvm-maven:25-graalce
+docker pull ghcr.io/softinstigate/graalvm-maven:25.1.3-graalce
 ```
 
 **Supported platforms:** `linux/amd64`, `linux/arm64`.
 
 **Tag conventions:**
 - `latest` — tracks the most recent release
-- `25-graalce` — current main
+- `25.1.3-graalce` — current
+- `25-graalce` — major version alias
 - Historical: `24.0.2-graalce`, `22.0.2-graalce`, `21.0.2-graalce`
 
 Browse all tags on [Docker Hub](https://hub.docker.com/r/softinstigate/graalvm-maven/tags) or [GHCR](https://github.com/SoftInstigate/graalvm-maven-docker/pkgs/container/graalvm-maven).

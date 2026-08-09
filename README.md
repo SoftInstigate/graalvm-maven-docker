@@ -121,7 +121,15 @@ docker run -it --rm softinstigate/graalvm-maven --version
 - Maintainer flow to release a new base version:
     1) Update `ARG JAVA_VERSION` and `ARG MAVEN_VERSION` in `Dockerfile`
     2) Update the versions in this README
-    3) Commit and push, then create and push a git tag (e.g. `25-graalce`)
+    3) Commit and push, then create and push a git tag (e.g. `25.1.3-graalce`)
+
+## Documentation
+
+Detailed docs live in the [`openwiki/`](openwiki/) directory:
+
+- [Quickstart](openwiki/quickstart.md) — pull, build, and native-image usage
+- [Dockerfile and image structure](openwiki/dockerfile.md) — layer breakdown, ARG versions, SDKMAN config
+- [CI/CD and release process](openwiki/ci-cd.md) — GitHub Actions workflow, secrets, release steps
 
 ## Entrypoint and environment
 

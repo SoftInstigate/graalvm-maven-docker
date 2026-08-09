@@ -15,15 +15,16 @@ The entire image is defined in a single [`Dockerfile`](/Dockerfile) at the repos
 FROM debian:stable-slim
 ```
 
-The image uses `debian:stable-slim` for minimal footprint. Layers are organized as two `RUN` instructions:
+The image uses `debian:stable-slim` for minimal footprint. All setup is done in a single `RUN` instruction:
 
-1. **System dependencies + SDKMAN install** — installs OS packages, sets locale, fetches SDKMAN, and writes its config.
-2. **Java + Maven install** — sources SDKMAN and runs `sdk install` for both tools, then cleans up archive/temp files.
+1. **System dependencies** — installs OS packages, sets locale.
+2. **SDKMAN install** — fetches SDKMAN, writes its config.
+3. **Java + Maven install** — sources SDKMAN, runs `sdk install` for both tools, then cleans up archive/temp files.
 
 ## Version control via ARGs
 
 ```dockerfile
-ARG JAVA_VERSION="25.0.2-graalce"
+ARG JAVA_VERSION="25.1.3-graalce"
 ARG MAVEN_VERSION="3.9.16"
 ```
 
