@@ -27,8 +27,8 @@ Building Java applications—especially GraalVM native images—requires a speci
 
 ## Current versions
 
-- GraalVM: 25-graalce
-- Maven: 3.9.11
+- GraalVM: 25.1.3-graalce
+- Maven: 3.9.16
 
 ## Supported platforms and tags
 
@@ -38,7 +38,8 @@ Building Java applications—especially GraalVM native images—requires a speci
     - GitHub Container Registry: `ghcr.io/softinstigate/graalvm-maven`
 - Useful tags:
     - `latest` (tracks the most recent release)
-    - `25-graalce` (current main)
+    - `25.1.3-graalce` (current)
+    - `25-graalce` (major version alias)
     - Historical examples: `24.0.2-graalce`, `22.0.2-graalce`, `21.0.2-graalce`
 
 Browse tags on:
@@ -50,10 +51,10 @@ Browse tags on:
 
 ```bash
 # Docker Hub
-docker pull softinstigate/graalvm-maven:25-graalce
+docker pull softinstigate/graalvm-maven:25.1.3-graalce
 
 # Or GHCR
-docker pull ghcr.io/softinstigate/graalvm-maven:25-graalce
+docker pull ghcr.io/softinstigate/graalvm-maven:25.1.3-graalce
 ```
 
 ## How it works
