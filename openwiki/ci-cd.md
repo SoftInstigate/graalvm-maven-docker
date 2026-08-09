@@ -72,14 +72,7 @@ Each build pushes to **both** registries with two tags:
 
 ## OpenWiki automation
 
-[`.github/workflows/openwiki-update.yml`](/.github/workflows/openwiki-update.yml) runs a scheduled OpenWiki documentation refresh:
-
-- **Schedule:** daily at 08:00 UTC (`cron: "0 8 * * *"`)
-- **Trigger:** also available via `workflow_dispatch`
-- **Process:** checks out the repo, installs OpenWiki globally, runs `openwiki code --update --print`, then opens a PR on the `openwiki/update` branch with any documentation changes.
-- **PR scope:** changes under `openwiki/`, `AGENTS.md`, `CLAUDE.md`, and the workflow file itself.
-
-The workflow uses OpenRouter as the LLM provider (configured via `OPENROUTER_API_KEY` secret).
+The dedicated OpenWiki automation workflow (previously `.github/workflows/openwiki-update.yml`) has been removed. Documentation updates are now handled manually or through external orchestration.
 
 ## Relationship to Dockerfile
 

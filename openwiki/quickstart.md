@@ -15,8 +15,8 @@ The image lets teams run Maven builds and GraalVM native-image compilations insi
 
 | Component | Version |
 |-----------|---------|
-| GraalVM   | `25-graalce` |
-| Maven     | `3.9.11` |
+| GraalVM   | `25.0.2-graalce` |
+| Maven     | `3.9.16` |
 
 Versions are controlled by `ARG` directives in the [`Dockerfile`](/Dockerfile).
 

@@ -23,8 +23,8 @@ The image uses `debian:stable-slim` for minimal footprint. Layers are organized 
 ## Version control via ARGs
 
 ```dockerfile
-ARG JAVA_VERSION="25-graalce"
-ARG MAVEN_VERSION="3.9.11"
+ARG JAVA_VERSION="25.0.2-graalce"
+ARG MAVEN_VERSION="3.9.16"
 ```
 
 These `ARG` directives are the single source of truth for installed tool versions. To upgrade GraalVM or Maven, change these values and update the README version table to match.
